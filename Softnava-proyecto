@@ -1,0 +1,5 @@
+# Softnava
+
+Sitio estático de Softnava con páginas independientes para inicio, servicios, perfil, misión, visión, equipo y contacto.
+
+Abre `index.html` en un navegador. La portada usa el emblema oficial adjunto. En **Contacto**, el botón **Contáctanos** abre WhatsApp al +57 301 946 2759 con un mensaje listo para enviar. También está disponible el correo nicolascedid23@gmail.com. El sitio no necesita servidor.

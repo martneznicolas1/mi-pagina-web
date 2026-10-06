@@ -1,0 +1,28 @@
+@media (pointer:fine) and (prefers-reduced-motion:no-preference){
+  .hero:before{transform:translate(calc(-50% + var(--parallax-x,0px)),calc(-53% + var(--parallax-y,0px)));transition:transform .22s ease-out}
+  .welcome-emblem{transition:transform .16s ease-out;will-change:transform}
+  .card,.feature,.contact-info,.contact-direct{transform-style:preserve-3d;transition:transform .18s ease-out,border-color .22s,box-shadow .22s}
+  .card.pointer-tilt:hover,.feature.pointer-tilt:hover,.contact-info.pointer-tilt:hover,.contact-direct.pointer-tilt:hover{transform:perspective(1000px) rotateX(var(--tilt-y,0deg)) rotateY(var(--tilt-x,0deg)) translateY(-3px)}
+  .cursor-aura{position:fixed;z-index:0;top:0;left:0;width:340px;height:340px;border-radius:50%;pointer-events:none;opacity:0;background:radial-gradient(circle,rgba(48,133,213,.07),rgba(48,133,213,.025) 38%,transparent 70%);transform:translate(-50%,-50%);transition:opacity .35s ease;will-change:left,top}
+  body.cursor-active .cursor-aura{opacity:1}
+  header,main,footer,.whatsapp-float{position:relative;z-index:1}
+  header{position:sticky}.whatsapp-float{position:fixed}
+}
+
+html.motion-enabled .motion-reveal{opacity:0;transform:translateY(18px);transition:opacity .52s cubic-bezier(.2,.7,.25,1),transform .52s cubic-bezier(.2,.7,.25,1),border-color .22s,box-shadow .22s;transition-delay:var(--motion-delay,0ms);will-change:opacity,transform}
+html.motion-enabled .motion-reveal.motion-visible{opacity:1;transform:translateY(0)}
+html.motion-enabled header.motion-reveal{transform:translateY(-10px)}
+html.motion-enabled header.motion-reveal.motion-visible{transform:translateY(0)}
+html.motion-enabled .page-head.motion-reveal h1{animation:heading-focus .65s .08s both}
+html.motion-enabled .home-visual.motion-reveal{transition-duration:.72s}
+html.motion-enabled .page-leaving>header,html.motion-enabled .page-leaving>main,html.motion-enabled .page-leaving>footer,html.motion-enabled .page-leaving>.whatsapp-float,html.motion-enabled .page-leaving>.welcome-audio{opacity:0;transform:translateY(-7px);transition:opacity .16s ease,transform .16s ease}
+.btn,.menu-button,.menu a,.brand-logo,.service-details summary,.whatsapp-float,.welcome-audio{transition-property:transform,background,color,border-color,box-shadow;transition-duration:.2s;transition-timing-function:ease}
+.btn:active,.menu-button:active,.service-details summary:active,.welcome-audio:active{transform:scale(.97)}
+.brand-logo{transition:transform .25s ease,filter .25s ease}
+.brand:hover .brand-logo{filter:drop-shadow(0 0 12px rgba(56,178,233,.4))}
+.service-details summary .fa-chevron-down{transition:transform .22s ease}
+.service-details[open] summary .fa-chevron-down{transform:rotate(180deg)}
+@keyframes heading-focus{from{opacity:.65;filter:blur(3px);transform:translateY(6px)}to{opacity:1;filter:blur(0);transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){
+  html.motion-enabled .motion-reveal,html.motion-enabled .motion-reveal.motion-visible,html.motion-enabled header.motion-reveal,html.motion-enabled header.motion-reveal.motion-visible{opacity:1;transform:none;transition:none;animation:none;will-change:auto}
+}
